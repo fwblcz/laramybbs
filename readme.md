@@ -70,3 +70,54 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 字体图标
+
+- 1、安装
+
+ npm install @fortawesome/fontawesome-free
+ 
+打开 package.json 可以看到新增了这一行依赖：
+
+{
+.
+.
+.
+
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.6.3"
+    }
+}
+- 2、载入
+
+我们还需要在样式中载入：
+
+resources/sass/app.scss
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Fontawesome
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+@import '~@fortawesome/fontawesome-free/scss/regular';
+
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+
+/* universal */
+.
+.
+.
+
+-3 、 编译
+
+运行 mix 编译命令：
+
+$ npm run watch-poll
