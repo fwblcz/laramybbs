@@ -32,7 +32,7 @@ class TopicsController extends Controller
 
         return $this->response->paginator($topics, new TopicTransformer());
     }
-    
+
     public function userIndex(User $user, Request $request)
     {
         $topics = $user->topics()->recent()
@@ -41,6 +41,10 @@ class TopicsController extends Controller
         return $this->response->paginator($topics, new TopicTransformer());
     }
 
+    public function show(Topic $topic)
+    {
+        return $this->response->item($topic, new TopicTransformer());
+    }
 
     public function store(TopicRequest $request, Topic $topic)
     {
